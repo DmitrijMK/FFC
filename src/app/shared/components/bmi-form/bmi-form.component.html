@@ -1,0 +1,60 @@
+<div class="bmi-wrapper">
+  <form>
+    <div class="state-group">
+      <label class="example-margin">Выберите пол:</label>
+      <mat-radio-group [(ngModel)]="labelPosition" [ngModelOptions]="{standalone: true}">
+        <mat-radio-button class="example-margin" value="man">Мужчина</mat-radio-button>
+        <mat-radio-button class="example-margin" value="woman">Женщина</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="age-group">
+      <p>Введите ваш возраст:</p>
+      <mat-slider
+        class="example-margin"
+        [disabled]="disabled"
+        [invert]="invert"
+        [max]="max"
+        [min]="min"
+        [step]="step"
+        [thumbLabel]="thumbLabel"
+        [tickInterval]="tickInterval"
+        [(ngModel)]="value"
+        [ngModelOptions]="{standalone: true}"
+        [vertical]="vertical">
+      </mat-slider>
+    </div>
+    <div class="weight-group">
+      <p>Введите ваш вес:</p>
+      <mat-slider
+        class="example-margin"
+        [disabled]="disabled"
+        [invert]="invert"
+        [max]="max"
+        [min]="min"
+        [step]="step"
+        [thumbLabel]="thumbLabel"
+        [tickInterval]="tickInterval"
+        [(ngModel)]="value"
+        [ngModelOptions]="{standalone: true}"
+        [vertical]="vertical">
+      </mat-slider>
+    </div>
+    <div class="weight-group">
+      <p>Введите ваш рост:</p>
+      <mat-slider
+        class="example-margin"
+        [disabled]="disabled"
+        [invert]="invert"
+        [max]="max"
+        [min]="min"
+        [step]="step"
+        [thumbLabel]="thumbLabel"
+        [tickInterval]="tickInterval"
+        [(ngModel)]="value"
+        [ngModelOptions]="{standalone: true}"
+        [vertical]="vertical">
+      </mat-slider>
+    </div>
+
+  </form>
+</div>
