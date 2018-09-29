@@ -1,4 +1,3 @@
-
 export enum MEN_TYPE {
   THINK = '../../../../assets/images/men-images/think.png',
   NORMAL = '../../../../assets/images/men-images/normal.png',
