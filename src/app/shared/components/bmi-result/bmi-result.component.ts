@@ -27,6 +27,7 @@ export class BmiResultComponent implements OnInit, OnChanges {
       this.initialiseData();
       this.questionIcon = false;
     }
+    console.log(changes);
   }
 
   initialiseData(): void {
