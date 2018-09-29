@@ -1,6 +1,7 @@
-import {Component, Input, OnInit, OnChanges, SimpleChanges} from '@angular/core';
+import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {UserData} from '../../interfaces/user-data';
 import {MEN_TYPE, WOMEN_TYPE} from '../../const/body-type';
+import {ColorThemeService} from '../../services/color-theme.service';
 
 @Component({
   selector: 'app-bmi-result',
@@ -10,11 +11,14 @@ import {MEN_TYPE, WOMEN_TYPE} from '../../const/body-type';
 export class BmiResultComponent implements OnInit, OnChanges {
   @Input() data: UserData;
   imgSrc: string;
+  colorTheme = 'man-wrapper';
 
-  constructor() { }
+  constructor(private color: ColorThemeService) {
+  }
 
   ngOnInit() {
-    this.data ?  this.initialiseData() : this.imgSrc = '../../../../assets/images/person.png';
+    this.data ? this.initialiseData() : this.imgSrc = '../../../../assets/images/person.png';
+    this.color.data$.subscribe(data => this.colorTheme = data);
   }
 
   ngOnChanges(changes: SimpleChanges) {
@@ -23,24 +27,23 @@ export class BmiResultComponent implements OnInit, OnChanges {
     }
   }
 
-  initialiseData (): void {
+  initialiseData(): void {
     this.checkBodyTransform(this.data);
     console.log(this.imgSrc);
   }
 
-  checkBodyTransform (data): void {
+  checkBodyTransform(data): void {
     const {bmi, gender} = data;
     if (gender === 'Мужчина') {
       this.setBodyType(bmi, MEN_TYPE);
     } else {
       this.setBodyType(bmi, WOMEN_TYPE);
     }
-
   }
 
   setBodyType(bmi: number, type: any): void {
     if (bmi < 18.5) {
-      this.imgSrc =  type.THINK;
+      this.imgSrc = type.THINK;
     } else if (18.5 <= bmi && bmi <= 25) {
       this.imgSrc = type.NORMAL;
     } else if (25 < bmi && bmi <= 30) {
@@ -51,5 +54,4 @@ export class BmiResultComponent implements OnInit, OnChanges {
       this.imgSrc = type.THIRD_OVERWEIGHT;
     }
   }
-
 }

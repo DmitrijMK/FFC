@@ -1,7 +1,7 @@
 .form-card {
   display: flex;
   flex-direction: column;
-  min-width: 400px;
+  min-width: 480px;
   align-self: stretch;
   background: rgba(9, 25, 42, .5);
   color: white;
@@ -10,7 +10,7 @@
     font-size: 24px;
   }
   mat-radio-button {
-    margin: 5px 10px 5px 0;
+    margin: 10px 10px 5px 0;
   }
   .group {
     display: flex;
@@ -20,7 +20,7 @@
     label {
       font-size: 16px;
       line-height: 32px;
-      margin: 5px 0 0;
+      margin: 10px 0 0;
     }
   }
 }
