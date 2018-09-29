@@ -2,7 +2,7 @@
   <form [formGroup]="bmiGroup" (submit)="handleSubmit()">
 
     <div class="group">
-      <label>Выберите пол:</label>
+      <label>Укажите Ваш пол</label>
       <mat-radio-group formControlName="gender">
         <mat-radio-button value="Мужчина">Мужчина</mat-radio-button>
         <mat-radio-button value="Женщина">Женщина</mat-radio-button>
@@ -10,6 +10,7 @@
     </div>
 
     <div class="group">
+      <label>Укажите Ваш возраст:</label>
       <mat-slider formControlName="age"
                   thumbLabel
                   min="5"
@@ -17,6 +18,7 @@
     </div>
 
     <div class="group">
+      <label>Укажите Ваш вес:</label>
       <mat-slider formControlName="weight"
                   thumbLabel
                   min="25"
@@ -24,12 +26,12 @@
     </div>
 
     <div class="group">
+      <label>Укажите Ваш рост:</label>
       <mat-slider formControlName="growth"
                   thumbLabel
                   min="25"
                   max="225"></mat-slider>
     </div>
-
     <button mat-raised-button color="primary">Рассчитать</button>
   </form>
 </div>
