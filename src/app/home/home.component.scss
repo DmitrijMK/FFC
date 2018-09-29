@@ -1,4 +1,4 @@
-.wrapper {
+.manColor {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -7,4 +7,15 @@
   height: 100vh;
   margin-top: -64px;
   background: url('../../assets/BGMen.png') no-repeat;
+}
+
+.womanColor {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+
+  height: 100vh;
+  margin-top: -64px;
+  background: url('../../assets/BGWomen.jpg') no-repeat;
 }

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ColorThemeService} from '../shared/services/color-theme.service';
 
 @Component({
   selector: 'app-home',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  colorTheme = 'man-wrapper';
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(private color: ColorThemeService) {
   }
 
+  ngOnInit() {
+    this.color.data$.subscribe(data => this.colorTheme = data);
+  }
 }

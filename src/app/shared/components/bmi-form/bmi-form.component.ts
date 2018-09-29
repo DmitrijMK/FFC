@@ -3,6 +3,8 @@ import 'hammerjs';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {LocalStorageService} from '../../services/localstorage.service';
 import {BmiService} from '../../services/bmi.service';
+import {ColorThemeService} from '../../services/color-theme.service';
+import {map} from 'rxjs/operators';
 
 @Component({
   selector: 'app-bmi-form',
@@ -12,20 +14,33 @@ import {BmiService} from '../../services/bmi.service';
 export class BmiFormComponent implements OnInit {
   bmiGroup: FormGroup;
   name: string;
+  colorClass = 'manColor';
 
   constructor(private fb: FormBuilder,
               private storage: LocalStorageService,
-              private bmi: BmiService) {
+              private bmi: BmiService,
+              private color: ColorThemeService) {
     this.bmiGroup = this.fb.group({
-      gender: [null, Validators.required],
-      age: [null, Validators.required],
-      weight: [null, Validators.required],
-      growth: [null, Validators.required]
+      gender: ['Мужчина', Validators.required],
+      age: [22, Validators.required],
+      weight: [75, Validators.required],
+      growth: [175, Validators.required]
     });
   }
 
   ngOnInit() {
     this.name = this.storage.get('name');
+
+    this.bmiGroup.valueChanges.pipe(map(value => {
+        if (value.gender === 'Мужчина') {
+          // this.colorClass = 'manColor';
+          this.color.getNext('manColor');
+        } else {
+          // this.colorClass = 'womanColor';
+          this.color.getNext('womanColor');
+        }
+      }
+    )).subscribe();
   }
 
   handleSubmit() {
