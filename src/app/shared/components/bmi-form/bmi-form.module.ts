@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {MatRadioModule, MatSliderModule} from '@angular/material';
+import {MatRadioModule, MatSliderModule, MatButtonModule} from '@angular/material';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BmiFormComponent} from './bmi-form.component';
 
@@ -10,7 +10,8 @@ import {BmiFormComponent} from './bmi-form.component';
     MatSliderModule,
     MatRadioModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    MatButtonModule
   ],
   declarations: [BmiFormComponent],
   exports: [BmiFormComponent]

@@ -1,59 +1,35 @@
 <div class="bmi-wrapper">
-  <form>
-    <div class="state-group">
-      <label class="example-margin">Выберите пол:</label>
-      <mat-radio-group [(ngModel)]="labelPosition" [ngModelOptions]="{standalone: true}">
-        <mat-radio-button class="example-margin" value="man">Мужчина</mat-radio-button>
-        <mat-radio-button class="example-margin" value="woman">Женщина</mat-radio-button>
+  <form [formGroup]="bmiGroup" (submit)="handleSubmit()">
+
+    <div class="group">
+      <label>Выберите пол:</label>
+      <mat-radio-group formControlName="gender">
+        <mat-radio-button value="Мужчина">Мужчина</mat-radio-button>
+        <mat-radio-button value="Женщина">Женщина</mat-radio-button>
       </mat-radio-group>
     </div>
-    <div class="age-group">
-      <p>Введите ваш возраст:</p>
-      <mat-slider
-        class="example-margin"
-        [disabled]="disabled"
-        [invert]="invert"
-        [max]="120"
-        [min]="5"
-        [step]="1"
-        [thumbLabel]="thumbLabel"
-        [tickInterval]="tickInterval"
-        [(ngModel)]="ageValue"
-        [ngModelOptions]="{standalone: true}"
-        [vertical]="vertical">
-      </mat-slider>
+
+    <div class="group">
+      <mat-slider formControlName="age"
+                  thumbLabel
+                  min="5"
+                  max="125"></mat-slider>
     </div>
-    <div class="weight-group">
-      <p>Введите ваш вес:</p>
-      <mat-slider
-        class="example-margin"
-        [disabled]="disabled"
-        [invert]="invert"
-        [max]="250"
-        [min]="25"
-        [step]="1"
-        [thumbLabel]="thumbLabel"
-        [tickInterval]="tickInterval"
-        [(ngModel)]="weightValue"
-        [ngModelOptions]="{standalone: true}"
-        [vertical]="vertical">
-      </mat-slider>
+
+    <div class="group">
+      <mat-slider formControlName="weight"
+                  thumbLabel
+                  min="25"
+                  max="225"></mat-slider>
     </div>
-    <div class="growth-group">
-      <p>Введите ваш рост:</p>
-      <mat-slider
-        class="example-margin"
-        [disabled]="disabled"
-        [invert]="invert"
-        [max]="250"
-        [min]="100"
-        [step]="1"
-        [thumbLabel]="thumbLabel"
-        [tickInterval]="tickInterval"
-        [(ngModel)]="growthValue"
-        [ngModelOptions]="{standalone: true}"
-        [vertical]="vertical">
-      </mat-slider>
+
+    <div class="group">
+      <mat-slider formControlName="growth"
+                  thumbLabel
+                  min="25"
+                  max="225"></mat-slider>
     </div>
+
+    <button mat-raised-button color="primary">Рассчитать</button>
   </form>
 </div>

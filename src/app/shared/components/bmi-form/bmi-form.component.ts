@@ -1,5 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {coerceNumberProperty} from '@angular/cdk/coercion';
+import 'hammerjs';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {LocalStorageService} from '../../services/localstorage.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-bmi-form',
@@ -7,33 +10,27 @@ import {coerceNumberProperty} from '@angular/cdk/coercion';
   styleUrls: ['./bmi-form.component.less']
 })
 export class BmiFormComponent implements OnInit {
-  labelPosition = 'man';
-  autoTicks = true;
-  disabled = false;
-  invert = false;
-  showTicks = false;
-  step = 1;
-  thumbLabel = true;
-  ageValue = 0;
-  weightValue = 0;
-  growthValue = 0;
+  bmiGroup: FormGroup;
+  name: string;
 
-  vertical = false;
-
-  constructor() {
-  }
-
-  private _tickInterval = 1;
-
-  get tickInterval(): number | 'auto' {
-    return this.showTicks ? (this.autoTicks ? 'auto' : this._tickInterval) : 0;
-  }
-
-  set tickInterval(value) {
-    this._tickInterval = coerceNumberProperty(value);
+  constructor(private fb: FormBuilder,
+              private storage: LocalStorageService,
+              private router: Router) {
+    this.bmiGroup = this.fb.group({
+      gender: [null, Validators.required],
+      age: [null, Validators.required],
+      weight: [null, Validators.required],
+      growth: [null, Validators.required]
+    });
   }
 
   ngOnInit() {
+    this.name = this.storage.get('name');
   }
 
+  handleSubmit() {
+    console.log(this.bmiGroup.value);
+    this.storage.set('userData', {...this.bmiGroup.value});
+    // // this.router.navigate(['home']);
+  }
 }
