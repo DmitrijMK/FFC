@@ -7,7 +7,6 @@ export class ColorThemeService {
   data$ = this.color$.asObservable();
 
   getNext(res) {
-    console.log(res);
     this.color$.next(res);
   }
 }

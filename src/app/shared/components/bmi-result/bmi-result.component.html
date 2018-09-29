@@ -1,6 +1,7 @@
 <div class="bmi-container">
   <div [ngClass]="['light-container', colorTheme]">
     <img class="person-image" [src]="imgSrc" alt="">
+    <div *ngIf="questionIcon" class="question-icon"></div>
   </div>
 </div>
 
