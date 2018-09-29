@@ -35,11 +35,11 @@ export class BmiFormComponent implements OnInit {
 
     this.bmiGroup.valueChanges.pipe(map(value => {
         if (value.gender === 'Мужчина') {
-          // this.colorClass = 'manColor';
           this.color.getNext('manColor');
+          this.colorClass = 'manColor';
         } else {
-          // this.colorClass = 'womanColor';
           this.color.getNext('womanColor');
+          this.colorClass = 'womanColor';
         }
       }
     )).subscribe();
