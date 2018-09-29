@@ -1,11 +1,14 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { HeaderComponent } from './components/header/header.component';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {HeaderComponent} from './components/header/header.component';
+import {LocalStorageService} from './services/localstorage.service';
 
 @NgModule({
   imports: [
     CommonModule
   ],
-  declarations: [HeaderComponent]
+  declarations: [HeaderComponent],
+  providers: [LocalStorageService]
 })
-export class SharedModule { }
+export class SharedModule {
+}

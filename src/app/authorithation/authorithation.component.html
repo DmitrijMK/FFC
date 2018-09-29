@@ -1,3 +1,11 @@
-<p>
-  authorithation works!
-</p>
+<section>
+  <div class="auth-form">
+    <form [formGroup]="login" (submit)="handleSubmit()">
+      <mat-form-field>
+        <input matInput placeholder="Введите ваше имя" formControlName="name">
+      </mat-form-field>
+      <button  mat-raised-button color="primary">Primary</button>
+    </form>
+  </div>
+</section>
+
