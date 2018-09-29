@@ -1,6 +1,6 @@
 <mat-card class="form-card">
   <div class="title">{{name | uppercase}}</div>
-  <mat-card-content>
+  <mat-card-content [ngClass]="colorClass">
     <form [formGroup]="bmiGroup" (submit)="handleSubmit()">
       <div class="group">
         <label>Укажите Ваш пол:</label>

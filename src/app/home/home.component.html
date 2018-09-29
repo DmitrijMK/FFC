@@ -1,6 +1,5 @@
 <app-header></app-header>
-<div class="wrapper">
+<div [ngClass]="colorTheme">
   <app-bmi-form (change)="handleSubmit($event)"></app-bmi-form>
   <app-bmi-result [data]="bmiData"></app-bmi-result>
 </div>
-
