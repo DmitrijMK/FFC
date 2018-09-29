@@ -4,6 +4,7 @@ import {LocalStorageService} from './services/localstorage.service';
 import {BmiFormModule} from './components/bmi-form/bmi-form.module';
 import {HeaderModule} from './components/header/header.module';
 import {BmiService} from './services/bmi.service';
+import {BmiResultModule} from './components/bmi-result/bmi-result.module';
 
 @NgModule({
   imports: [
@@ -12,7 +13,9 @@ import {BmiService} from './services/bmi.service';
     HeaderModule
   ],
   exports: [
-    HeaderModule, BmiFormModule
+    HeaderModule,
+    BmiFormModule,
+    BmiResultModule
   ],
   providers: [LocalStorageService, BmiService]
 })
