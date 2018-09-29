@@ -1,20 +1,19 @@
-mat-toolbar {
-  background: rgba(0, 0, 0, .5);
-
-  .mat-icon {
-    font-size: 28px;
-    color: white;
-  }
-
-  .example-icon {
-    padding: 0 14px;
-  }
-
-  .flex-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+.mat-icon {
+  font-size: 28px;
+  color: white;
 }
+
+.example-icon {
+  padding: 0 14px;
+}
+
+.flex-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 10%;
+  align-items: center;
+  background: rgba(9, 25, 42, .5);
+}
+
 
 
