@@ -17,7 +17,6 @@ export class BmiService {
 
   getDailyMenCallories(value): number {
     const {gender, age, weight, growth} = value;
-    console.log(value);
     return gender === 'Мужчина' ? this.weightConst * weight + 6 + this.heightConst * growth - this.ageConst * age + 5
       : this.weightConst * weight + 6 + this.heightConst * growth - this.ageConst * age - 161;
   }

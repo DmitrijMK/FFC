@@ -1,6 +1,6 @@
 <app-header></app-header>
 <div class="wrapper">
-  <app-bmi-form></app-bmi-form>
-  <app-bmi-result></app-bmi-result>
+  <app-bmi-form (change)="handleSubmit($event)"></app-bmi-form>
+  <app-bmi-result [data]="bmiData"></app-bmi-result>
 </div>
 

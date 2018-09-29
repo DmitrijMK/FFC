@@ -1,8 +1,9 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import 'hammerjs';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {LocalStorageService} from '../../services/localstorage.service';
 import {BmiService} from '../../services/bmi.service';
+import {UserData} from '../../interfaces/user-data';
 
 @Component({
   selector: 'app-bmi-form',
@@ -10,6 +11,7 @@ import {BmiService} from '../../services/bmi.service';
   styleUrls: ['./bmi-form.component.scss']
 })
 export class BmiFormComponent implements OnInit {
+  @Output() change = new EventEmitter<UserData> ();
   bmiGroup: FormGroup;
   name: string;
 
@@ -29,10 +31,8 @@ export class BmiFormComponent implements OnInit {
   }
 
   handleSubmit() {
-    console.log(this.bmiGroup.value);
     const bmi = this.bmi.getBMI(this.bmiGroup.value.weight, this.bmiGroup.value.growth);
     const dc = this.bmi.getDailyMenCallories(this.bmiGroup.value);
-    this.storage.set('userData', {bmi: bmi, dc: dc, ...this.bmiGroup.value});
-    // // this.router.navigate(['home']);
+    this.change.emit({bmi: bmi, dc: dc, ...this.bmiGroup.value});
   }
 }

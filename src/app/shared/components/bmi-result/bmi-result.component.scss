@@ -1,0 +1,19 @@
+.person-image {
+  height: 520px;
+  width: auto;
+}
+
+.bmi-container {
+  position: relative;
+
+  .light-container {
+    display: block;
+    width: 346px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    background: url("../../../../assets/images/light/light-men.png") no-repeat;
+  }
+}

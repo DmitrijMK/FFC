@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import {LocalStorageService} from '../../services/localstorage.service';
+import {Component, Input, OnInit, OnChanges, SimpleChanges} from '@angular/core';
 import {UserData} from '../../interfaces/user-data';
 import {MEN_TYPE, WOMEN_TYPE} from '../../const/body-type';
 
@@ -8,18 +7,23 @@ import {MEN_TYPE, WOMEN_TYPE} from '../../const/body-type';
   templateUrl: './bmi-result.component.html',
   styleUrls: ['./bmi-result.component.scss']
 })
-export class BmiResultComponent implements OnInit {
-  data: UserData | boolean;
+export class BmiResultComponent implements OnInit, OnChanges {
+  @Input() data: UserData;
   imgSrc: string;
 
-  constructor(private  storage: LocalStorageService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.storage.get('userData') ?  this.initialiseData() : this.imgSrc = '../../../../assets/person.png';
+    this.data ?  this.initialiseData() : this.imgSrc = '../../../../assets/images/person.png';
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes && this.data) {
+      this.initialiseData();
+    }
   }
 
   initialiseData (): void {
-    this.data =  this.storage.get('userData');
     this.checkBodyTransform(this.data);
     console.log(this.imgSrc);
   }
