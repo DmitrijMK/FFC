@@ -7,6 +7,8 @@ import {BmiService} from './services/bmi.service';
 import {BmiResultModule} from './components/bmi-result/bmi-result.module';
 import {ColorThemeService} from './services/color-theme.service';
 import {BmiRecommendationModule} from './components/bmi-recommendation/bmi-recommendation.module';
+import {PopupModule} from './components/popup/popup.module';
+import {GoogleMapService} from './services/google-map.service';
 
 @NgModule({
   imports: [
@@ -14,7 +16,8 @@ import {BmiRecommendationModule} from './components/bmi-recommendation/bmi-recom
     BmiFormModule,
     HeaderModule,
     BmiResultModule,
-    BmiRecommendationModule
+    BmiRecommendationModule,
+    PopupModule
   ],
   exports: [
     HeaderModule,
@@ -22,8 +25,7 @@ import {BmiRecommendationModule} from './components/bmi-recommendation/bmi-recom
     BmiResultModule,
     BmiRecommendationModule
   ],
-  providers: [LocalStorageService, BmiService, ColorThemeService],
-  declarations: []
+  providers: [LocalStorageService, BmiService, ColorThemeService, GoogleMapService]
 })
 export class SharedModule {
 }

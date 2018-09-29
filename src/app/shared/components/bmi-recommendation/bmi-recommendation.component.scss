@@ -1,0 +1,21 @@
+:host {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+.form-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+  align-self: stretch;
+  background: rgba(9, 25, 42, .5);
+  color: white;
+}
+
+.manColor {
+  color: #ffb400;
+}
+
+.womanColor {
+  color: #a800ff;
+}

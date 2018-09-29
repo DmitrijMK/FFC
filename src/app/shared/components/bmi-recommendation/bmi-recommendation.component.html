@@ -1,3 +1,7 @@
-<p>
-  bmi-recommendation works!
-</p>
+<mat-card [ngClass]="['form-card']">
+  <div [ngClass]="['title', colorTheme]">{{name | uppercase}}</div>
+  <span class="subtitle">Да ты др</span>
+  <mat-card-content>
+    <button mat-button (click)="openDialog()">Open dialog</button>
+  </mat-card-content>
+</mat-card>
