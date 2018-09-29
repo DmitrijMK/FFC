@@ -7,7 +7,7 @@ import {BmiService} from '../../services/bmi.service';
 @Component({
   selector: 'app-bmi-form',
   templateUrl: './bmi-form.component.html',
-  styleUrls: ['./bmi-form.component.less']
+  styleUrls: ['./bmi-form.component.scss']
 })
 export class BmiFormComponent implements OnInit {
   bmiGroup: FormGroup;

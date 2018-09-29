@@ -6,7 +6,7 @@ import {Router} from '@angular/router';
 @Component({
   selector: 'app-authorithation',
   templateUrl: './authorithation.component.html',
-  styleUrls: ['./authorithation.component.less']
+  styleUrls: ['./authorithation.component.scss']
 })
 export class AuthorithationComponent implements OnInit {
   login: FormGroup;
