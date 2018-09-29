@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, SimpleChanges} from '@angular/core';
 import {LocalStorageService} from '../shared/services/localstorage.service';
 import {UserData} from '../shared/interfaces/user-data';
 import {ColorThemeService} from '../shared/services/color-theme.service';
@@ -11,6 +11,7 @@ import {ColorThemeService} from '../shared/services/color-theme.service';
 export class HomeComponent implements OnInit {
   bmiData: UserData;
   colorTheme = 'man-wrapper';
+  getRecommendation = false;
 
   constructor(
     private storage: LocalStorageService,
@@ -21,11 +22,13 @@ export class HomeComponent implements OnInit {
     this.color.data$.subscribe(data => this.colorTheme = data);
     if (this.storage.get('userData')) {
       this.bmiData = this.storage.get('userData');
+      this.getRecommendation = true;
     }
   }
 
   handleSubmit(object: UserData) {
     this.bmiData = object;
     this.storage.set('userData', object);
+    this.getRecommendation = true;
   }
 }

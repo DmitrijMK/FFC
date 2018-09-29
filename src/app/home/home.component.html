@@ -1,7 +1,10 @@
 <app-header></app-header>
 <div [ngClass]="['wrapper', colorTheme]">
   <div class="container">
-    <app-bmi-form (change)="handleSubmit($event)"></app-bmi-form>
+    <app-bmi-form *ngIf="!getRecommendation; else recommendation" (change)="handleSubmit($event)"></app-bmi-form>
+    <ng-template  #recommendation>
+      <app-bmi-recommendation></app-bmi-recommendation>
+    </ng-template>
     <app-bmi-result [data]="bmiData"></app-bmi-result>
   </div>
 </div>

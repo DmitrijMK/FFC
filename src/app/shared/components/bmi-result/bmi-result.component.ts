@@ -12,6 +12,7 @@ export class BmiResultComponent implements OnInit, OnChanges {
   @Input() data: UserData;
   imgSrc: string;
   colorTheme = 'man-wrapper';
+  questionIcon = true;
 
   constructor(private color: ColorThemeService) {
   }
@@ -24,12 +25,12 @@ export class BmiResultComponent implements OnInit, OnChanges {
   ngOnChanges(changes: SimpleChanges) {
     if (changes && this.data) {
       this.initialiseData();
+      this.questionIcon = false;
     }
   }
 
   initialiseData(): void {
     this.checkBodyTransform(this.data);
-    console.log(this.imgSrc);
   }
 
   checkBodyTransform(data): void {

@@ -6,19 +6,24 @@ import {HeaderModule} from './components/header/header.module';
 import {BmiService} from './services/bmi.service';
 import {BmiResultModule} from './components/bmi-result/bmi-result.module';
 import {ColorThemeService} from './services/color-theme.service';
+import {BmiRecommendationModule} from './components/bmi-recommendation/bmi-recommendation.module';
 
 @NgModule({
   imports: [
     CommonModule,
     BmiFormModule,
-    HeaderModule
+    HeaderModule,
+    BmiResultModule,
+    BmiRecommendationModule
   ],
   exports: [
     HeaderModule,
     BmiFormModule,
-    BmiResultModule
+    BmiResultModule,
+    BmiRecommendationModule
   ],
-  providers: [LocalStorageService, BmiService, ColorThemeService]
+  providers: [LocalStorageService, BmiService, ColorThemeService],
+  declarations: []
 })
 export class SharedModule {
 }
