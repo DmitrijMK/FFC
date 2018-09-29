@@ -1,21 +1,22 @@
-.manColor {
+.wrapper {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-
   height: 100vh;
   margin-top: -64px;
-  background: url('../../assets/BGMen.png') no-repeat;
+  background-size: cover;
+
+  .container{
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+  }
+}
+.manColor {
+  background: url('../../assets/BGMen.png') center center fixed no-repeat;
 }
 
 .womanColor {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-
-  height: 100vh;
-  margin-top: -64px;
-  background: url('../../assets/BGWomen.jpg') no-repeat;
+  background: url('../../assets/BGWomen.jpg') center center fixed no-repeat;
 }
