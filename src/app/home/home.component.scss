@@ -1,24 +1,28 @@
 .wrapper {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
   align-items: center;
   height: 100vh;
   margin-top: -64px;
   background-size: cover;
 
-  .container{
+  .container {
+
+    @media only screen and (max-width: 1024px) {
+      flex-direction: column !important;
+    }
     display: flex;
-    justify-content: space-between;
-    padding: 0 10%;
-    align-items: stretch;
     width: 100%;
   }
 }
+.preload {
+  display: none;
+  background: url('../../assets/BGWomen.jpg') center center fixed;
+}
+
 .manColor {
-  background: url('../../assets/BGMen.png') center center fixed no-repeat;
+  background: url('../../assets/BGMen.png') center center fixed;
 }
 
 .womanColor {
-  background: url('../../assets/BGWomen.jpg') center center fixed no-repeat;
+  background: url('../../assets/BGWomen.jpg') center center fixed ;
 }

@@ -1,9 +1,12 @@
+:host{
+  flex-grow: 2;
+  padding: 20px;
+}
 .bmi-container {
   display: flex;
-  align-self: stretch;
   justify-content: center;
   flex-direction: column;
-  min-width: 480px;
+  min-width: 300px;
   height: 100%;
   background: rgba(9, 25, 42, .5);
 
