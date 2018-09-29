@@ -1,24 +1,18 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {HeaderComponent} from './components/header/header.component';
 import {LocalStorageService} from './services/localstorage.service';
-import { BmiFormComponent } from './components/bmi-form/bmi-form.component';
-import { MatRadioModule, MatSliderModule} from '@angular/material';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {BmiFormModule} from './components/bmi-form/bmi-form.module';
+import {HeaderModule} from './components/header/header.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    MatSliderModule,
-    MatRadioModule,
-    ReactiveFormsModule,
-    FormsModule,
+    BmiFormModule,
+    HeaderModule
   ],
   exports: [
-    HeaderComponent,
-    BmiFormComponent
+    HeaderModule, BmiFormModule
   ],
-  declarations: [HeaderComponent, BmiFormComponent],
   providers: [LocalStorageService]
 })
 export class SharedModule {

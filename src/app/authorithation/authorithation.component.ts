@@ -14,7 +14,7 @@ export class AuthorithationComponent implements OnInit {
   constructor(private storage: LocalStorageService,
               private fb: FormBuilder,
               private router: Router
-              ) {
+  ) {
 
     this.login = this.fb.group({
       name: [null, Validators.required],
@@ -23,8 +23,8 @@ export class AuthorithationComponent implements OnInit {
   }
 
   handleSubmit() {
-   this.storage.set('name', this.login.value.name);
-   this.router.navigate(['home']);
+    this.storage.set('name', this.login.value.name);
+    this.router.navigate(['home']);
   }
 
   ngOnInit() {

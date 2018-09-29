@@ -13,12 +13,12 @@
         class="example-margin"
         [disabled]="disabled"
         [invert]="invert"
-        [max]="max"
-        [min]="min"
-        [step]="step"
+        [max]="120"
+        [min]="5"
+        [step]="1"
         [thumbLabel]="thumbLabel"
         [tickInterval]="tickInterval"
-        [(ngModel)]="value"
+        [(ngModel)]="ageValue"
         [ngModelOptions]="{standalone: true}"
         [vertical]="vertical">
       </mat-slider>
@@ -29,32 +29,31 @@
         class="example-margin"
         [disabled]="disabled"
         [invert]="invert"
-        [max]="max"
-        [min]="min"
-        [step]="step"
+        [max]="250"
+        [min]="25"
+        [step]="1"
         [thumbLabel]="thumbLabel"
         [tickInterval]="tickInterval"
-        [(ngModel)]="value"
+        [(ngModel)]="weightValue"
         [ngModelOptions]="{standalone: true}"
         [vertical]="vertical">
       </mat-slider>
     </div>
-    <div class="weight-group">
+    <div class="growth-group">
       <p>Введите ваш рост:</p>
       <mat-slider
         class="example-margin"
         [disabled]="disabled"
         [invert]="invert"
-        [max]="max"
-        [min]="min"
-        [step]="step"
+        [max]="250"
+        [min]="100"
+        [step]="1"
         [thumbLabel]="thumbLabel"
         [tickInterval]="tickInterval"
-        [(ngModel)]="value"
+        [(ngModel)]="growthValue"
         [ngModelOptions]="{standalone: true}"
         [vertical]="vertical">
       </mat-slider>
     </div>
-
   </form>
 </div>
