@@ -1,12 +1,9 @@
 <mat-card class="form-card">
-  <mat-card-header>
-    <mat-card-title>{{name | uppercase}}</mat-card-title>
-    <mat-card-subtitle>Введи данные</mat-card-subtitle>
-  </mat-card-header>
+  <div class="title">{{name | uppercase}}</div>
   <mat-card-content>
     <form [formGroup]="bmiGroup" (submit)="handleSubmit()">
       <div class="group">
-        <label>Укажите Ваш пол </label>
+        <label>Укажите Ваш пол:</label>
         <mat-radio-group formControlName="gender">
           <mat-radio-button value="Мужчина">Мужчина</mat-radio-button>
           <mat-radio-button value="Женщина">Женщина</mat-radio-button>
@@ -18,7 +15,7 @@
         <mat-slider formControlName="age"
                     thumbLabel
                     min="5"
-                    max="125"></mat-slider>
+                    max="100"></mat-slider>
       </div>
 
       <div class="group">
@@ -33,7 +30,7 @@
         <label>Укажите Ваш рост: <span class="chosenValue">{{bmiGroup.value.growth}}</span></label>
         <mat-slider formControlName="growth"
                     thumbLabel
-                    min="25"
+                    min="100"
                     max="225"></mat-slider>
       </div>
 

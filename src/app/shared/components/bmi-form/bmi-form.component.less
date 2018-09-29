@@ -1,26 +1,30 @@
 :host {
-  width: 95%;
-}
-
-.form-card {
-  display: flex;
-  flex-direction: column;
-  width: 35%;
-  min-width: 250px;
-  background: rgba(9, 25, 42, .5);
-  color: white;
-
-  mat-radio-button {
-    padding: 5px 10px 5px 0;
-  }
-  .group {
+  .form-card {
     display: flex;
     flex-direction: column;
-    label {
-      font-size: 16px;
-      line-height: 32px;
+    min-width: 300px;
+    background: rgba(9, 25, 42, .5);
+    color: white;
+
+    .title {
+      font-size: 24px;
+    }
+    mat-radio-button {
+      padding: 5px 10px 5px 0;
+    }
+    .group {
+      display: flex;
+      flex-direction: column;
       padding: 10px 0;
+
+      label {
+        font-size: 16px;
+        line-height: 32px;
+        padding: 5px 0 0;
+      }
     }
   }
 }
+
+
 
