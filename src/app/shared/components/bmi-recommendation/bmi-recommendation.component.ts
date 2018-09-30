@@ -19,6 +19,7 @@ export class BmiRecommendationComponent implements OnInit {
   result: string;
   colorTheme = 'manColor';
   recomData: Array<string>;
+  colorTheme = 'womanColor';
 
   constructor(private storage: LocalStorageService,
               private color: ColorThemeService,
