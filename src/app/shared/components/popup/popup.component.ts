@@ -7,13 +7,13 @@ import {GoogleMapService} from '../../services/google-map.service';
   styleUrls: ['./popup.component.scss']
 })
 export class PopupComponent implements OnInit {
-  src: string;
+  src;
 
   constructor(private map: GoogleMapService) {
   }
 
   ngOnInit() {
-    this.src = this.map.getGym();
+    this.src = this.map.getMapHref();
   }
 
 }

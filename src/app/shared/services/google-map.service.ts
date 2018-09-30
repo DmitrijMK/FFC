@@ -1,20 +1,12 @@
 import {Injectable} from '@angular/core';
+import {DomSanitizer} from '@angular/platform-browser';
 
 @Injectable()
 export class GoogleMapService {
-  getGym() {
-    return 'https://www.google.com.ua/maps/search/спортзал/';
+  constructor(protected sanitizer: DomSanitizer) {
   }
 
-  getCafe() {
-    return 'https://www.google.com.ua/maps/search/кафе/';
-  }
-
-  getPhoto() {
-    return 'https://www.google.com.ua/maps/search/фотостудия';
-  }
-
-  getIvent() {
-    return 'https://www.google.com.ua/maps/search/события/';
+  getMapHref() {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(`https://maps.google.com/maps?q=кафе&t=&z=13&ie=UTF8&iwloc=&output=embed`);
   }
 }
