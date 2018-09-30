@@ -1,7 +1,10 @@
 <mat-card [ngClass]="['form-card']">
-  <div [ngClass]="['title', colorTheme]">{{name}}, <span>{{result}}</span></div>
+  <h2 [ngClass]="['title', colorTheme]">{{name}}, <span>{{result}}</span></h2>
   <span class="subtitle">Да ты др</span>
   <mat-card-content>
-    <button mat-button (click)="openDialog()">Open dialog</button>
+    <p>lorem ipsum</p>
+    <p>lorem ipsum</p>
+    <p>lorem ipsum</p>
+    <button [ngClass]="colorTheme" mat-raised-button color="primary" (click)="openDialog()">Open dialog</button>
   </mat-card-content>
 </mat-card>
