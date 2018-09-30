@@ -1,7 +1,8 @@
 <mat-card [ngClass]="['form-card']">
   <div [ngClass]="['title', colorTheme]">{{name}}, <span>{{result}}</span></div>
-  <span class="subtitle">Да ты др</span>
-  <mat-card-content>
-    <button mat-button (click)="openDialog()">Open dialog</button>
+
+  <mat-card-content *ngFor="let item of recomData">
+    <span class="subtitle">{{item}}</span>
+    <button mat-button (click)="openDialog()">Посмотреть совет</button>
   </mat-card-content>
 </mat-card>
