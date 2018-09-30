@@ -15,8 +15,8 @@ export enum WOMAN_PHRASE {
 }
 
 export class RecommendationPhrase {
-  static  BEATIFUL = {recomend: 'Устройся моделью, чудо, я обязательно подпишусь на тебя в Instagram', title: 'Карта Фотостудий в студию'};
-  static  Proper_Nutrition = {recomend : 'Начни питаться правильно', title: 'Ближайшие  Кафешки'};
-  static SPORT = {recomend: 'Спортзал придумали не просто так, я покажу тебе ближайшие', title: 'Посмотреть на карте'};
-  static DOINGS = {recomend: 'Еда не единственное удовольствие, вот пара события для тебя!', title: 'Карта с событиями'};
+  static  BEATIFUL = {recomend: 'Устройся моделью, чудо, я обязательно подпишусь на тебя в Instagram', title: 'Карта Фотостудий в студию', url: 'фотостудия'};
+  static  Proper_Nutrition = {recomend : 'Начни питаться правильно', title: 'Ближайшие  Кафешки', url: 'Кафе'};
+  static SPORT = {recomend: 'Спортзал придумали не просто так, я покажу тебе ближайшие', title: 'Посмотреть на карте', url: 'спортзал'};
+  static DOINGS = {recomend: 'Еда не единственное удовольствие, вдыхни свежего воздуха!', title: 'Ближайшие парки', url: 'парк'};
 }

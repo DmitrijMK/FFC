@@ -19,7 +19,6 @@ export class BmiRecommendationComponent implements OnInit {
   result: string;
   colorTheme = 'manColor';
   recomData: Array<string>;
-  colorTheme = 'womanColor';
   src: string;
 
   constructor(private storage: LocalStorageService,
@@ -53,9 +52,7 @@ export class BmiRecommendationComponent implements OnInit {
     }
   }
 
-  openDialog() {
-    this.dialog.open(PopupComponent, {
-      data: ''
-    });
+  openDialog(value) {
+    this.dialog.open(PopupComponent, {data: value});
   }
 }

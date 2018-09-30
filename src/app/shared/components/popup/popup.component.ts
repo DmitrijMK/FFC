@@ -1,5 +1,6 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
 import {GoogleMapService} from '../../services/google-map.service';
+import {MAT_DIALOG_DATA} from '@angular/material';
 
 @Component({
   selector: 'app-popup',
@@ -9,11 +10,13 @@ import {GoogleMapService} from '../../services/google-map.service';
 export class PopupComponent implements OnInit {
   src;
 
-  constructor(private map: GoogleMapService) {
+  constructor(private map: GoogleMapService,
+              @Inject(MAT_DIALOG_DATA) public data) {
   }
 
   ngOnInit() {
-    this.src = this.map.getMapHref();
+    console.log(this.data);
+    this.src = this.map.getMapHref(this.data);
   }
 
 }
