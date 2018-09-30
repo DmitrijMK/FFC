@@ -14,9 +14,9 @@ export enum WOMAN_PHRASE {
   THIRD_OVERWEIGHT = 'Не верь бабушке, ты не худая!'
 }
 
-export enum RECOMMENDATION_PHRASE {
-  BEATIFUL = 'Устройся моделью, чудо, я обязательно подпишусь на тебя в Instagram',
-  Proper_Nutrition = 'Начни питаться правильно, смотри я подобрал ближайшие места для питания',
-  SPORT = 'Спортзал придумали не просто так, я покажу тебе ближайшие',
-  DOINGS = 'Еда не единственное удовольствие, вот пара события для тебя!',
+export class RecommendationPhrase {
+  static  BEATIFUL = {recomend: 'Устройся моделью, чудо, я обязательно подпишусь на тебя в Instagram', title: 'Карта Фотостудий в студию'};
+  static  Proper_Nutrition = {recomend : 'Начни питаться правильно', title: 'Ближайшие  Кафешки'};
+  static SPORT = {recomend: 'Спортзал придумали не просто так, я покажу тебе ближайшие', title: 'Посмотреть на карте'};
+  static DOINGS = {recomend: 'Еда не единственное удовольствие, вот пара события для тебя!', title: 'Карта с событиями'};
 }

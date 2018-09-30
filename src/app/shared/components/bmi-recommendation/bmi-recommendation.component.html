@@ -2,6 +2,6 @@
   <div [ngClass]="['title', colorTheme]">{{name}}, <span>{{result}}</span></div>
 
   <mat-card-content *ngFor="let item of recomData">
-    <span class="subtitle">{{item}}</span>
-    <button [ngClass]="colorTheme" mat-raised-button color="primary" (click)="openDialog()">Совет</button>  </mat-card-content>
+    <span class="subtitle">{{item['recomend']}}</span>
+    <button [ngClass]="colorTheme" mat-raised-button color="primary" (click)="openDialog()">{{item['title']}}</button>  </mat-card-content>
 </mat-card>

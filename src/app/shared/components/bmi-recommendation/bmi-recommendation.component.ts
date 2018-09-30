@@ -5,7 +5,7 @@ import {MatDialog} from '@angular/material';
 import {PopupComponent} from '../popup/popup.component';
 import {BmiService} from '../../services/bmi.service';
 import {UserData} from '../../interfaces/user-data';
-import {MAN_PHRASE, WOMAN_PHRASE, RECOMMENDATION_PHRASE} from '../../const/recommendation';
+import {MAN_PHRASE, RecommendationPhrase, WOMAN_PHRASE} from '../../const/recommendation';
 
 
 @Component({
@@ -35,11 +35,12 @@ export class BmiRecommendationComponent implements OnInit {
     } else {
       this.result = this.bmi.setBodyType(this.data.bmi, WOMAN_PHRASE);
     }
-    this.getListRecom(this.data.bmi, RECOMMENDATION_PHRASE);
+    this.getListRecom(this.data.bmi, RecommendationPhrase);
+    console.log(this.recomData);
     this.color.data$.subscribe(data => this.colorTheme = data);
   }
 
-  getListRecom(bmi: number, type:): void {
+  getListRecom (bmi: number, type: any): void {
     if (bmi < 18.5) {
        this.recomData = [type.SPORT, type.Proper_Nutrition];
     } else if (18.5 <= bmi && bmi <= 25) {
