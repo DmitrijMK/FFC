@@ -17,9 +17,8 @@ export class BmiRecommendationComponent implements OnInit {
   name: string;
   data: UserData;
   result: string;
-  colorTheme = 'manColor';
+  colorTheme: string;
   recomData: Array<string>;
-  src: string;
 
   constructor(private storage: LocalStorageService,
               private color: ColorThemeService,
@@ -32,12 +31,12 @@ export class BmiRecommendationComponent implements OnInit {
     this.data = this.storage.get('userData');
     if (this.data.gender === 'Мужчина') {
       this.result = this.bmi.setBodyType(this.data.bmi, MAN_PHRASE);
+      this.colorTheme = 'manColor';
     } else {
       this.result = this.bmi.setBodyType(this.data.bmi, WOMAN_PHRASE);
+      this.colorTheme = 'womanColor';
     }
     this.getListRecom(this.data.bmi, RecommendationPhrase);
-    console.log(this.recomData);
-    this.color.data$.subscribe(data => this.colorTheme = data);
   }
 
   getListRecom (bmi: number, type: any): void {

@@ -10,10 +10,6 @@
   height: 100%;
   background: rgba(9, 25, 42, .5);
 
-  //@keyframes pulse_animation {
-  //  40% { transform: scale(1.02); }
-  //}
-
   .light-container {
     display: flex;
     height: 100%;
@@ -21,11 +17,6 @@
     position: relative;
     align-items: center;
     padding-top: 4%;
-    //animation-name: pulse_animation;
-    //animation-duration: 2000ms;
-    //transform-origin:70% 70%;
-    //animation-iteration-count: infinite;
-    //animation-timing-function: linear;
   }
 
   .manColor {

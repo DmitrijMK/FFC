@@ -31,7 +31,7 @@ export class BmiFormComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.name = this.storage.get('name');
+    this.name = this.storage.get('name').charAt(0).toUpperCase() + this.storage.get('name').slice(1);
 
     this.bmiGroup.valueChanges.pipe(map(value => {
         if (value.gender === 'Мужчина') {

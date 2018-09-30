@@ -1,6 +1,6 @@
 <mat-card [ngClass]="['form-card']">
-  <h2 [ngClass]="['title', colorTheme]">{{name}}, <br><span>{{result}}</span></h2>
-
+  <h2 [ngClass]="['title', colorTheme]">{{name}}, <span>{{result}}</span></h2>
+  <h3><p>Твой результат</p><span>BMI: {{data.bmi}}</span><span>Daily Calories: {{data.dc}}</span></h3>
   <mat-card-content *ngFor="let item of recomData">
     <h4 class="subtitle">{{item['recomend']}}</h4>
     <button [ngClass]="colorTheme"

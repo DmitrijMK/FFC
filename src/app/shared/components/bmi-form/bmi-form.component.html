@@ -1,5 +1,5 @@
 <mat-card [ngClass]="['form-card', colorClass]">
-  <div class="title">{{name | uppercase}}</div>
+  <span class="title" [ngClass]="colorClass">{{name}},</span>
   <mat-card-content>
     <form [formGroup]="bmiGroup" (submit)="handleSubmit()">
       <div class="group">

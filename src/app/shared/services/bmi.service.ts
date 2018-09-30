@@ -12,8 +12,6 @@ export class BmiService {
   }
 
   setBodyType(bmi: number, type: any): string {
-    console.log(bmi);
-    console.log(type);
     if (bmi < 18.5) {
       return type.THINK;
     } else if (18.5 <= bmi && bmi <= 25) {
