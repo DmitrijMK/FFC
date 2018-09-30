@@ -11,6 +11,22 @@ export class BmiService {
   constructor() {
   }
 
+  setBodyType(bmi: number, type: any): string {
+    console.log(bmi);
+    console.log(type);
+    if (bmi < 18.5) {
+      return type.THINK;
+    } else if (18.5 <= bmi && bmi <= 25) {
+      return type.NORMAL;
+    } else if (25 < bmi && bmi <= 30) {
+      return type.FIRST_OVERWEIGHT;
+    } else if (30 < bmi && bmi <= 40) {
+      return type.SECOND_OVERWEIGHT;
+    } else if (bmi > 40) {
+      return type.THIRD_OVERWEIGHT;
+    }
+  }
+
   getBMI(weight: any, growth: any): number {
     return +(weight / Math.pow(growth / 100, 2)).toFixed(1);
   }
