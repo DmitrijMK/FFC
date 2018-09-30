@@ -1,39 +1,27 @@
 .auth-section {
   height: 100vh;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
-  background: url('../../assets/backgound.jpeg') no-repeat;
+  background: url('../../assets/backgound.jpg') center center fixed no-repeat;
   background-size: cover;
 
   .login-wrapper {
-    background: rgba(0, 0, 0, .85);
-    min-width: 25%;
-    padding: 20px 35px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 23px 3px rgba(0,0,0,0.85);
+    background: rgba(255, 255, 255, .5);
+    min-width: 30%;
+    padding: 0 50px;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    flex-direction: column;
+    text-align: center;
   }
-
   .auth-form {
     display: flex;
     flex-direction: column;
     align-items: center;
-
-
-    input {
-      background: rgba(256, 256, 256, .15);
-      border: none;
-      outline: none;
-      color: #ffffff;
-    }
-
-    input::placeholder {
-      color: #ffffff;
-    }
-
-    input:focus::placeholder {
-      color: transparent;
-    }
+    margin-top: 50px;
   }
+
 }
 

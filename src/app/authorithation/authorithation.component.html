@@ -1,13 +1,14 @@
 <section class="auth-section">
   <div class="login-wrapper">
+    <div>
+      <img src="../../assets/images/FunnyFitLogo.png" alt="logo">
+    </div>
     <form class="auth-form" [formGroup]="login" (submit)="handleSubmit()">
       <mat-form-field>
-        <input matInput placeholder="Введите ваш email" formControlName="mail">
+        <input class="name-field" matInput placeholder="Введите ваше имя" formControlName="name">
       </mat-form-field>
-      <mat-form-field>
-        <input matInput placeholder="Введите ваше имя" formControlName="name">
-      </mat-form-field>
-      <button  mat-raised-button color="primary">Войти</button>
+
+      <button mat-raised-button color="primary">Войти</button>
     </form>
   </div>
 </section>
